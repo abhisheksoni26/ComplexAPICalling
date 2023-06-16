@@ -13,6 +13,7 @@ import com.example.complexapicalling.model.PokemonModel
 import com.example.complexapicalling.ui.AbilityActivity
 import com.example.complexapicalling.ui.MainActivity
 import com.example.complexapicalling.viewmodel.NamesViewModel
+import kotlin.math.log
 
 class NamesAdapter(var context:Context,var list:ArrayList<PokemonModel>) : RecyclerView.Adapter<NamesAdapter.ViewHolder>() {
 
@@ -33,14 +34,19 @@ class NamesAdapter(var context:Context,var list:ArrayList<PokemonModel>) : Recyc
 
         holder.itemView.setOnClickListener {
             var splittedArray=list[position].url?.split("/")
-           /* if (splittedArray != null) {
+            if (splittedArray != null) {
                 for (item in splittedArray){
                     Log.e("ADAPTER", "onBindViewHolder: $item" )
 
                 }
-            }*/
+            }
+
+            val last = splittedArray?.get(splittedArray?.lastIndex?.minus(1) ?: 0)
+
             val intent= Intent(context,AbilityActivity::class.java)
-            intent.putExtra("NUM", splittedArray?.last())
+            intent.putExtra("POKEMON_ID", last)
+
+            Log.e("TAG", "onBindViewHolder: ${last}" )
             context.startActivity(intent)
         }
 

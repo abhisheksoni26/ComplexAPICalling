@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
 
         //ViewModel Setup
-        val retrofitService = RetrofitService.retrofit.
+        val retrofitService = RetrofitService.retrofit.create(ApiCall::class.java)
         val repository = PokemonRepo(retrofitService)
 
         namesViewModel = ViewModelProvider(

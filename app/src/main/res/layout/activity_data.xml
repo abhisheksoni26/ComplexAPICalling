@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.AbilityActivity">
+    android:paddingHorizontal="10dp"
+    tools:context=".ui.DataActivity">
 
     <TextView
         android:id="@+id/tvAbility"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ability:-"
+        android:text="Data:-"
         android:textSize="20sp"
         android:layout_marginTop="5dp"
         android:textStyle="bold"
@@ -27,18 +28,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAbility"
-        tools:listitem="@layout/pokemon_list" />
+        tools:listitem="@layout/itemview_effect" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPokemonImage"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvPokemonAbility"
-        tools:listitem="@layout/itemview_imglist" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
